@@ -3,9 +3,9 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
-Summary:    No summary found
+Summary:    combine WWW::Mechanize and HTML::TreeBuilder
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
@@ -18,8 +18,11 @@ BuildRequires: perl(MooseX::Role::Parameterized)
 BuildRequires: perl(Scalar::Util)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(Test::WWW::Mechanize)
+
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+
+Requires: perl(HTML::TreeBuilder)
 
 %description
 This module combines the WWW::Mechanize manpage and the HTML::TreeBuilder
@@ -28,18 +31,17 @@ manpage. Why? Because I've seen too much code like the following:
  like($mech->content, qr{<p>some text</p>}, "Found the right tag");
 
 Which is just all flavours of wrong - its akin to processing XML with
-regexps. Instead, do it like the following:
+regexps.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%{make}
+%make
 
 %check
-%{make} test
+%make test
 
 %install
 rm -rf %buildroot
@@ -53,5 +55,3 @@ rm -rf %buildroot
 %doc Changes
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
