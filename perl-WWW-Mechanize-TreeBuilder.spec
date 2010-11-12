@@ -1,5 +1,5 @@
 %define upstream_name    WWW-Mechanize-TreeBuilder
-%define upstream_version 1.10002
+%define upstream_version 1.10003
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
