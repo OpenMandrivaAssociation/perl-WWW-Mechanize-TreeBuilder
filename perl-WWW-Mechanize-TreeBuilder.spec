@@ -1,15 +1,15 @@
 %define upstream_name    WWW-Mechanize-TreeBuilder
-%define upstream_version 1.10003
+%define upstream_version 1.20000
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Combine WWW::Mechanize and HTML::TreeBuilder
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/WWW/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/ashb/WWW-Mechanize-TreeBuilder
+Source0:	https://cpan.metacpan.org/authors/id/A/AS/ASH/WWW-Mechanize-TreeBuilder-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
