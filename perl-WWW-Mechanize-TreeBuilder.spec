@@ -1,15 +1,13 @@
 %define upstream_name    WWW-Mechanize-TreeBuilder
-%define upstream_version 1.20000
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.20000
+Release:	2
 
 Summary:	Combine WWW::Mechanize and HTML::TreeBuilder
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/ashb/WWW-Mechanize-TreeBuilder
-Source0:	https://cpan.metacpan.org/authors/id/A/AS/ASH/WWW-Mechanize-TreeBuilder-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/A/AS/ASH/WWW-Mechanize-TreeBuilder-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -34,7 +32,7 @@ Which is just all flavours of wrong - its akin to processing XML with
 regexps.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
